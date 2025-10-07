@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Recommender | Contact Us</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer>
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('status');
+
+      if (!name || !email || !message) {
+        status.textContent = 'Please fill out all fields.';
+        status.className = 'status error';
+        return;
+      }
+      if (!validateEmail(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.className = 'status error';
+        return;
+      }
+      status.textContent = 'Thanks! Your message has been recorded (demo only).';
+      status.className = 'status success';
+      e.target.reset();
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('contactForm').addEventListener('submit', handleSubmit);
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Travel Recommender</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Contact us</h1>
+      <p>Got feedback or a destination to add? Send us a note.</p>
+
+      <form id="contactForm" class="contact-form">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Tell us more..." required></textarea>
+
+        <button type="submit">Send</button>
+        <div id="status" class="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Recommender</p>
+  </footer>
+</body>
+</html>
