@@ -1,0 +1,65 @@
+:root {
+  --brand: #1f7a8c;
+  --accent: #f4a261;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; background: var(--card); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { font-weight: 700; color: var(--brand); text-decoration: none; }
+.nav-links { list-style: none; display: flex; gap: 12px; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--text); padding: 8px 12px; border-radius: 6px; }
+.nav-links a.active, .nav-links a:hover { background: var(--border); }
+
+main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+
+.intro { margin-bottom: 20px; }
+.intro h1 { margin: 0 0 8px 0; }
+.intro p { color: var(--muted); }
+
+.filters { margin: 16px 0; }
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  background: var(--brand); color: white; border: none; padding: 10px 14px;
+  border-radius: 6px; cursor: pointer;
+}
+button:hover { background: #166777; }
+
+.country-input { margin-top: 8px; display: flex; gap: 8px; align-items: center; }
+.country-input input { padding: 8px; border: 1px solid var(--border); border-radius: 6px; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+}
+.card img { width: 100%; height: 160px; object-fit: cover; }
+.card-content { padding: 12px; }
+.card h3 { margin: 0 0 6px 0; }
+.card p { margin: 0; color: var(--muted); }
+
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+.contact-form { display: grid; gap: 10px; max-width: 520px; }
+.contact-form input, .contact-form textarea {
+  padding: 10px; border: 1px solid var(--border); border-radius: 6px;
+}
+.status { margin-top: 6px; font-size: 0.95rem; }
+.status.error { color: #b00020; }
+.status.success { color: #0f766e; }
+
+footer { text-align: center; padding: 20px; color: var(--muted); }
