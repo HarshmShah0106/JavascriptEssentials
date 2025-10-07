@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Recommender | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Travel Recommender</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Find your perfect destination</h1>
+      <p>Tell us what you’re into, and we’ll suggest beaches, temples, or places by country—complete with images and quick facts.</p>
+    </section>
+
+    <section class="filters">
+      <h2>Choose your preference</h2>
+      <div class="filter-row">
+        <button data-type="beach">Recommend Beaches</button>
+        <button data-type="temple">Recommend Temples</button>
+        <button data-type="country">Recommend by Country</button>
+      </div>
+      <div class="country-input" id="countryInput" style="display:none;">
+        <label for="countrySelect">Enter country:</label>
+        <input type="text" id="countrySelect" placeholder="e.g., India" />
+        <button id="countryGo">Go</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Recommendations</h2>
+      <div id="cards" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Recommender</p>
+  </footer>
+</body>
+</html>
